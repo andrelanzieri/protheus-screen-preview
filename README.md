@@ -102,6 +102,7 @@ Na barra da prévia ficam o seletor de diálogo (quando o fonte tem mais de um),
 | `advplScreenPreview.debounce` | `300` | Espera (ms) antes de atualizar ao digitar |
 | `advplScreenPreview.dialogCoordinateFactor` | `2` | Telas com `PIXEL`: pixels por unidade de coordenada |
 | `advplScreenPreview.charWidth` / `charHeight` | `16` / `26` | Telas sem `PIXEL`: pixels por coluna e por linha |
+| `advplScreenPreview.screenWidth` / `screenHeight` | `1366` / `768` | Tela simulada para `MsAdvSize`, `MsObjSize`, `GetScreenRes`, `FWGetDialogSize` e `oMainWnd` |
 | `advplScreenPreview.usePPO` | `false` | Usa o PPO do TOTVS Developer Studio (ver abaixo) |
 
 ## Avisos
