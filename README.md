@@ -135,6 +135,12 @@ Opcional: com o TDS conectado a um servidor, ligue `advplScreenPreview.usePPO` p
 
 A extensão não envia dados, não acessa a rede e não tem telemetria. Ao editar pela prévia, ela altera só os trechos necessários do fonte e preserva o encoding (CP1252).
 
-## Licença e contato
+## Autor e contato
 
-Licença [MIT](LICENSE). Dúvidas, erros e sugestões: [issues do repositório](https://github.com/andrelanzieri/protheus-screen-preview/issues).
+Desenvolvido por **André Lanzieri**.
+
+- E-mail: [andrelanzieri@hotmail.com](mailto:andrelanzieri@hotmail.com)
+- LinkedIn: [linkedin.com/in/andre-lanzieri-30663642](https://www.linkedin.com/in/andre-lanzieri-30663642/)
+- Dúvidas, erros e sugestões: [issues do repositório](https://github.com/andrelanzieri/protheus-screen-preview/issues)
+
+Licença [MIT](LICENSE).
