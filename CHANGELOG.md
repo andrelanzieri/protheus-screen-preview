@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.0
+
+- Aviso **ASP008** (informação): classe que a prévia não desenha (`DbTree`, `TTree`, `TGrid`, `TButtonBar`, `TSpinBox`...), criada sobre um diálogo ou controle da tela. Antes o controle sumia sem aviso. Pode ser desligado em `advplScreenPreview.rules.ASP008`.
+- **Exportar todas as telas** do fonte de uma vez, em PNG ou SVG: um arquivo por tela na pasta escolhida, com confirmação antes de substituir.
+- Botão **Copiar** na prévia: põe a tela como imagem PNG (2x) na área de transferência.
+- Fontes e cores do código na prévia, na imagem exportada e na miniatura do hover: `TFont():New`, `DEFINE FONT`, `FONT oFont`, `COLOR`/`COLORS`, `nClrText`/`nClrBack` dos construtores, `CLR_*` (sem precisar do `colors.ch`), `RGB()`, `SetFont`, `SetColor`, `oX:oFont`, `oX:nClrText`/`nClrPane` e o básico do `SetCss` (cor, fundo, tamanho, negrito, itálico). O `COLORS 0, 16777215` que o desenhador de telas grava em todo controle continua seguindo o tema. Num fundo colorido, o texto sem cor própria fica escuro ou claro para continuar legível no tema escuro.
+- Estado dos controles: `WHEN .F.`, `{|| .F.}`, `Disable()` e `lActive := .F.` aparecem esmaecidos; `lReadOnly` (também no `TGet():New` e no MEMO) em cinza; `Hide()` e `lVisible := .F.` ficam bem apagados e tracejados na prévia e fora da imagem exportada. Um painel desabilitado ou oculto vale para o que está dentro. Desabilitados e ocultos saem da ordem de foco, e ocultos não contam no aviso de sobreposição (ASP001). Tooltip, hover e painel de propriedades mostram a fonte, as cores e o comando que desabilita ou oculta.
+- `TGet():New` com `lPassword` e `lHasButton` agora aparece com os pontos e a lupa.
+- Painel de propriedades com **cor do texto, cor de fundo e fonte** (nome, tamanho, negrito, itálico e sublinhado), gravadas no fonte: cláusulas `COLORS`/`FONT` nos comandos, parâmetros do `New` nas classes ou `oX:SetColor`/`oX:SetFont` depois da criação. Cada controle ganha o próprio `TFont():New(...)`, sem mexer numa fonte usada por outros. O botão ↺ volta a cor ao padrão do tema. Bloqueado quando a cor ou a fonte vem de um `SetCss`, em controles de laço ou de função auxiliar, e quando o controle não está numa variável e o comando não tem a cláusula.
+- `DEFINE SBUTTON ... DISABLE` aparece desabilitado.
+- `Ctrl+Z` e `Ctrl+Y` (ou `Ctrl+Shift+Z`) na prévia desfazem e refazem a última alteração no fonte, sem precisar voltar ao editor.
+
 ## 1.4.0 (2026-11-17)
 
 - Telas dimensionadas pela resolução: `MsAdvSize`, `MsObjSize`, `GetScreenRes`, `FWGetDialogSize`, `TranslateBottom` e `oMainWnd:nTop/nBottom/nRight...` agora usam uma tela simulada (padrão 1366 x 768; configurações `screenWidth`/`screenHeight`). Antes o diálogo virava 40 x 48 px. O tamanho aparece como estimado.
